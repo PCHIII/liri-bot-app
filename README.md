@@ -1,6 +1,3 @@
-# liri-bot-app
-
-# liri-bot
 
 # LIRI Bot
 
