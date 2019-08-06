@@ -25,20 +25,21 @@ switch (action) {
         break;
 
     default:
-        console.log ('sorry, wrong command')
+        console.log ('sorry, wrong command');
         break;
 };
 
 function concertThis () {
-    var artist = process.argv.slice(3).join(" ");
+    var artistname = process.argv.slice(3).join(" ");
 
-    var apiUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+    var apiUrl = "https://rest.bandsintown.com/artists/" + artistname + "/events?app_id=codingbootcamp";
+
 
     axios.get(apiUrl).then(function(response){
         // console.log(response.data);
-        for (var i = 0; i < response.length; i++) {
-            console.log("---------------------------");
-            console.log("Artist: " + artist);
+        for (var i = 0; i < response.data.length; i++) {
+            
+            console.log("Artist: " + artistname);
             
             var venueName = response.data[i].venue.name;
             console.log("Venue: " + venueName);
@@ -48,7 +49,7 @@ function concertThis () {
             
             var date = moment(response.data[i].datetime).format("MM/DD/YYYY");
             console.log("Date: " + date);
-            console.log("---------------------------");
+            
 
         // var jsonData = response.data;
         // console.log(jsonData)
