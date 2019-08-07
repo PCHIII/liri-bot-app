@@ -102,32 +102,40 @@ function spotifythisSong() {
     //   console.log(data); 
     //   });
 
+    //capture user-input,
+    //npm install spotify, and use the template as suggested in the DOCS. 
+    //parse through the JSON correctly
 
     spotify.search({ type: 'track', query: songInput }, function (err, data) {
         if (err) {
-            return console.log('Error occurred: ' + err);
-        }
+            console.log('Error occurred: ' + err);
+            return; 
+        } 
+        
+        else {
 
         console.log("");
         // artist name
+        
+        var spotInfo = data.tracks.items[0];
 
-        var artist = data.tracks.items[0].album.artists[0].name;
+        var artist = spotInfo.album.artists[0].name;
         console.log("Artist: " + artist);
         // song name
 
-        var songTitle = data.tracks.items[0].name;
+        var songTitle = spotInfo.name;
         console.log("Song: " + songTitle);
 
         // song on spotify
-        var spotifyURL = data.tracks.items[0].external_urls.spotify;
-        console.log("Preview on Spotify: " + spotifyURL);
+        var spotifyURL = spotInfo.external_urls.spotify;
+        console.log("Preview song on Spotify: " + spotifyURL);
         
                 
         // album
-        var albumTitle = data.tracks.items[0].album.name;
+        var albumTitle = spotInfo.album.name;
         console.log("Album: " + albumTitle);
         console.log("");
 
-        
+    };
     });
 }
