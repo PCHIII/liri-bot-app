@@ -29,7 +29,7 @@ switch (action) {
         break;
 };
 
-function concertThis () {
+function concertThis() {
     var artistname = process.argv.slice(3).join(" ");
 
     var apiUrl = "https://rest.bandsintown.com/artists/" + artistname + "/events?app_id=codingbootcamp";
@@ -37,8 +37,9 @@ function concertThis () {
 
     axios.get(apiUrl).then(function(response){
         // console.log(response.data);
+
         for (var i = 0; i < response.data.length; i++) {
-            
+            console.log("")
             console.log("Artist: " + artistname);
             
             var venueName = response.data[i].venue.name;
@@ -49,8 +50,8 @@ function concertThis () {
             
             var date = moment(response.data[i].datetime).format("MM/DD/YYYY");
             console.log("Date: " + date);
-            
-
+            // console.log(JSON.stringify(response, null, 2));
+            console.log("")
         // var jsonData = response.data;
         // console.log(jsonData)
         }
@@ -58,7 +59,7 @@ function concertThis () {
 
 // axios errors docs?????? using promises from stack
 .catch((error) => {
-    // Error 😨
+    // Error 😨 
     if (error.response) {
         /*
          * The request was made and the server responded with a
@@ -83,3 +84,50 @@ function concertThis () {
 
 }
 
+function spotifythisSong() {
+    var songInput = process.argv.slice(3).join("+");
+
+    // if user doesn't input a song, default to 'Wake Me Up Before You Go-Go' by wham.
+    
+    if (!songInput) {
+        songInput = 'Wake Me Up Before You Go-Go';
+    }
+
+    // search spotify
+    // spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+    //     if (err) {
+    //       return console.log('Error occurred: ' + err);
+    //     }
+       
+    //   console.log(data); 
+    //   });
+
+
+    spotify.search({ type: 'track', query: songInput }, function (err, data) {
+        if (err) {
+            return console.log('Error occurred: ' + err);
+        }
+
+        console.log("");
+        // artist name
+
+        var artist = data.tracks.items[0].album.artists[0].name;
+        console.log("Artist: " + artist);
+        // song name
+
+        var songTitle = data.tracks.items[0].name;
+        console.log("Song: " + songTitle);
+
+        // song on spotify
+        var spotifyURL = data.tracks.items[0].external_urls.spotify;
+        console.log("Preview on Spotify: " + spotifyURL);
+        
+                
+        // album
+        var albumTitle = data.tracks.items[0].album.name;
+        console.log("Album: " + albumTitle);
+        console.log("");
+
+        
+    });
+}
