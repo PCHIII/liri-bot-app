@@ -57,9 +57,9 @@ function concertThis() {
         }
     })
 
-// axios errors docs?????? using promises from stack
+// axios errors docs?????? using promises cut/paste from stack
 .catch((error) => {
-    // Error 😨 
+    // Error 
     if (error.response) {
         /*
          * The request was made and the server responded with a
@@ -85,7 +85,7 @@ function concertThis() {
 }
 
 function spotifythisSong() {
-    var songInput = process.argv.slice(3).join("+");
+    var songInput = process.argv.slice(3).join(" ");
 
     // if user doesn't input a song, default to 'Wake Me Up Before You Go-Go' by wham.
     
