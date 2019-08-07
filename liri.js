@@ -40,7 +40,7 @@ function concertThis() {
 
         for (var i = 0; i < response.data.length; i++) {
             console.log("")
-            console.log("Artist: " + artistname);
+            console.log("Artist: " + artistname.toUpperCase());
             
             var venueName = response.data[i].venue.name;
             console.log("Venue: " + venueName);
@@ -119,7 +119,7 @@ function spotifythisSong() {
         
         var spotInfo = data.tracks.items[0];
 
-        var artist = spotInfo.album.artists[0].name;
+        var artist = spotInfo.album.artists[0].name.toUpperCase();
         console.log("Artist: " + artist);
         // song name
 
