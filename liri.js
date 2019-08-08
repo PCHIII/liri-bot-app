@@ -32,6 +32,11 @@ switch (action) {
 function concertThis() {
     var artistname = process.argv.slice(3).join(" ");
 
+    // if no artist enter madonna by default
+    if (!artistname) {
+        artistname = 'Madonna';
+    }
+
     var apiUrl = "https://rest.bandsintown.com/artists/" + artistname + "/events?app_id=codingbootcamp";
 
 
@@ -59,27 +64,28 @@ function concertThis() {
 
 // axios errors docs?????? using promises cut/paste from stack
 .catch((error) => {
+    console.log(error);
     // Error 
-    if (error.response) {
-        /*
-         * The request was made and the server responded with a
-         * status code that falls out of the range of 2xx
-         */
-        console.log(error.response.data);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-    } else if (error.request) {
-        /*
-         * The request was made but no response was received, `error.request`
-         * is an instance of XMLHttpRequest in the browser and an instance
-         * of http.ClientRequest in Node.js
-         */
-        console.log(error.request);
-    } else {
-        // Something happened in setting up the request and triggered an Error
-        console.log('Error', error.message);
-    }
-    console.log(error.config);
+    // if (error.response) {
+    //     /*
+    //      * The request was made and the server responded with a
+    //      * status code that falls out of the range of 2xx
+    //      */
+    //     console.log(error.response.data);
+    //     console.log(error.response.status);
+    //     console.log(error.response.headers);
+    // } else if (error.request) {
+    //     /*
+    //      * The request was made but no response was received, `error.request`
+    //      * is an instance of XMLHttpRequest in the browser and an instance
+    //      * of http.ClientRequest in Node.js
+    //      */
+    //     console.log(error.request);
+    // } else {
+    //     // Something happened in setting up the request and triggered an Error
+    //     console.log('Error', error.message);
+    // }
+    // console.log(error.config);
 });
 
 }
@@ -194,29 +200,30 @@ function movieThis() {
 
         
     })
-
+// grabbed from stack
     .catch((error) => {
+        console.log(error);
         // Error 
-        if (error.response) {
-            /*
-             * The request was made and the server responded with a
-             * status code that falls out of the range of 2xx
-             */
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
-        } else if (error.request) {
-            /*
-             * The request was made but no response was received, `error.request`
-             * is an instance of XMLHttpRequest in the browser and an instance
-             * of http.ClientRequest in Node.js
-             */
-            console.log(error.request);
-        } else {
-            // Something happened in setting up the request and triggered an Error
-            console.log('Error', error.message);
-        }
-        console.log(error.config);
+        // if (error.response) {
+        //     /*
+        //      * The request was made and the server responded with a
+        //      * status code that falls out of the range of 2xx
+        //      */
+        //     console.log(error.response.data);
+        //     console.log(error.response.status);
+        //     console.log(error.response.headers);
+        // } else if (error.request) {
+        //     /*
+        //      * The request was made but no response was received, `error.request`
+        //      * is an instance of XMLHttpRequest in the browser and an instance
+        //      * of http.ClientRequest in Node.js
+        //      */
+        //     console.log(error.request);
+        // } else {
+        //     // Something happened in setting up the request and triggered an Error
+        //     console.log('Error', error.message);
+        // }
+        // console.log(error.config);
     });
 
 }
@@ -230,7 +237,6 @@ function dowhatitSays () {
         if (error) {
             return console.log(error);
         }
-        
         var addTxt = data.split(",");
         
         process.argv[3] = addTxt[1]; 
