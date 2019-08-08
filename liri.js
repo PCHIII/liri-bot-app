@@ -119,7 +119,7 @@ function spotifythisSong() {
         
         var spotInfo = data.tracks.items[0];
 
-        var artist = spotInfo.album.artists[0].name.toUpperCase();
+        var artist = spotInfo.album.artists[0].name;
         console.log("Artist: " + artist);
         // song name
 
@@ -128,7 +128,7 @@ function spotifythisSong() {
 
         // song on spotify
         var spotifyURL = spotInfo.external_urls.spotify;
-        console.log("Preview song on Spotify: " + spotifyURL);
+        console.log("Preview " + songInput + " on Spotify: " + spotifyURL);
         
                 
         // album
