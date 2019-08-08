@@ -139,3 +139,104 @@ function spotifythisSong() {
     };
     });
 }
+
+function movieThis() {
+    var movie = process.argv.slice(3).join(" ");
+
+    if (!movie) {
+        movie = "Mr.Nobody";
+    }
+
+    //  OMDB via documentation (http://omdbapi.com/)
+    var qURL = "http://www.omdbapi.com/?apikey=trilogy&t=" + movie;
+    
+    // console.log(qURL);
+
+    // axios 
+    axios.get(qURL).then(function (response) {
+        // console.log(response.data);
+
+        console.log("");
+
+        // title 
+        var movieTitle = response.data.Title;
+        console.log("Title: " + movieTitle);
+
+        // year 
+        var releaseYear = response.data.Year;
+        console.log("Release Year: " + releaseYear);
+
+        // IMDB rating
+        var rateIMDB = response.data.imdbRating;
+        console.log("IMDB Rating: " + rateIMDB);
+
+        // Rotten Tomatoes rating
+        var rateRotten = response.data.Ratings[1].Value;
+        console.log("Rotten Tomatoes Rating: " + rateRotten);
+
+        // Country movie was produced 
+        var country = response.data.Country;
+        console.log("Produced in: " + country);
+
+        // language of the movie
+        var language = response.data.Language;
+        console.log("Language: " + language);
+
+        // plot of the movie
+        var plot = response.data.Plot;
+        console.log("Plot: " + plot);
+
+        //  main actors
+        var actors = response.data.Actors;
+        console.log("Actors: " + actors);
+        
+        console.log("");
+
+        
+    })
+
+    .catch((error) => {
+        // Error 
+        if (error.response) {
+            /*
+             * The request was made and the server responded with a
+             * status code that falls out of the range of 2xx
+             */
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+        } else if (error.request) {
+            /*
+             * The request was made but no response was received, `error.request`
+             * is an instance of XMLHttpRequest in the browser and an instance
+             * of http.ClientRequest in Node.js
+             */
+            console.log(error.request);
+        } else {
+            // Something happened in setting up the request and triggered an Error
+            console.log('Error', error.message);
+        }
+        console.log(error.config);
+    });
+
+}
+
+function dowhatitSays () {
+
+    // var fs = require("fs");
+
+    fs.readFile("random.txt", "utf8", function(error, data) { 
+
+        if (error) {
+            return console.log(error);
+        }
+        
+        var addTxt = data.split(",");
+        
+        process.argv[3] = addTxt[1]; 
+
+        if (addTxt[0] === 'spotify-this-song') {
+            spotifythisSong(process.argv[3]);
+        }
+    });
+}
