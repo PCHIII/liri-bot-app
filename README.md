@@ -48,8 +48,9 @@ If you haven't written a markdown file yet, [click here for a rundown](https://g
 9. Make it so liri.js can take in one of the following commands:
 
    * `concert-this`
-
-   ❮img src="images/concertSting.JPG"❯
+   
+❮img src="images/concertSting.JPG"❯
+   
 
    * `spotify-this-song`
 
