@@ -49,19 +49,19 @@ If you haven't written a markdown file yet, [click here for a rundown](https://g
 
    * `concert-this`
 
-   ❮img src="images/concertSting.jpg" ❯
+   ❮img src="images/concertSting.JPG" ❯
 
    * `spotify-this-song`
 
-  ❮img src="images/spotifyAll.jpg" ❯
+  ❮img src="images/spotifyAll.JPG" ❯
 
    * `movie-this`
 
-  ❮img src="MovieThis.jpg" ❯
+  ❮img src="MovieThis.JPG" ❯
 
    * `do-what-it-says`
 
-   ❮img src="images/do-what-it-says" ❯
+   ❮img src="images/do-what-it-says.JPG" ❯
 
 
 ### What Each Command Should Do
