@@ -56,15 +56,15 @@ If you haven't written a markdown file yet, [click here for a rundown](https://g
 
    * `spotify-this-song`
 
-  ❮img src="images/spotifyAll.JPG"❯
+  ![](images/spotifyAll.JPG)
 
    * `movie-this`
 
-  ❮img src="MovieThis.JPG"❯
+  ![](MovieThis.JPG)
 
    * `do-what-it-says`
 
-   ❮img src="images/do-what-it-says.JPG"❯
+   ![](images/do-what-it-says.JPG)
 
 
 ### What Each Command Should Do
