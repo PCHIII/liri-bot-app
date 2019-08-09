@@ -51,7 +51,7 @@ If you haven't written a markdown file yet, [click here for a rundown](https://g
    
    
    
-![](images/concertSting.JPG")
+![](images/concertSting.JPG)
    
 
    * `spotify-this-song`
