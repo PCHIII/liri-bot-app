@@ -60,7 +60,7 @@ If you haven't written a markdown file yet, [click here for a rundown](https://g
 
    * `movie-this`
 
-  ![](MovieThis.JPG)
+  ![](movieThis.JPG)
 
    * `do-what-it-says`
 
