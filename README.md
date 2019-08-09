@@ -1,5 +1,5 @@
 
-### LIRI Bot
+# LIRI Bot
 
 This project is called Liri-bot-app. LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a _Language_ Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
 
@@ -29,6 +29,9 @@ Below shows the app returning concert data when user enters the artist "Sting".
       * Date of the Event (use moment to format this as "MM/DD/YYYY")
          
 ![](images/concertSting.JPG)
+
+
+
    
   ## spotify-this-song
    
@@ -40,6 +43,9 @@ Below shows the app returning the default song "Wake me up before you Go-Go" whe
       * The album that the song is from
 
   ![](images/spotifyAll.JPG)
+  
+  
+  
 
    ## movie-this
    
@@ -55,6 +61,9 @@ Below shows the app returning the default movie (Mr. Nobody) when no movie is en
       * Actors in the movie.
 
   ![](images/MovieThis.JPG)
+  
+  
+  
 
    ## do-what-it-says
    
@@ -66,6 +75,9 @@ Below shows the app returning the default movie (Mr. Nobody) when no movie is en
       * The album that the song is from
 
    ![](images/do-what-it-says.JPG)
+   
+   
+   
 
 
 
