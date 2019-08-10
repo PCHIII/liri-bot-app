@@ -30,7 +30,7 @@ Below shows the app returning concert data when user enters the artist "Sting".
          
 ![](images/concertSting.JPG)
 
-
+---
 
    
   ## spotify-this-song
@@ -44,7 +44,7 @@ Below shows the app returning the default song "Wake me up before you Go-Go" whe
 
   ![](images/spotifyAll.JPG)
   
-  
+  ---
   
 
    ## movie-this
@@ -62,7 +62,7 @@ Below shows the app returning the default movie (Mr. Nobody) when no movie is en
 
   ![](images/MovieThis.JPG)
   
-  
+  ---
   
 
    ## do-what-it-says
@@ -76,8 +76,7 @@ Below shows the app returning the default movie (Mr. Nobody) when no movie is en
 
    ![](images/do-what-it-says.JPG)
    
-   
-   
+   ---   
 
 
 
