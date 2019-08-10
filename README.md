@@ -22,7 +22,7 @@ Screenshots are added below to showed working function as LIRI takes in the foll
 
  ##  concert-this
    
-Below shows the app returning concert data when user enters the artist "Sting".
+_Below shows the app returning concert data when user enters the artist "Sting"._
 
       * Name of the venue
       * Venue location
@@ -35,7 +35,7 @@ Below shows the app returning concert data when user enters the artist "Sting".
    
   ## spotify-this-song
    
-Below shows the app returning the default song "Wake me up before you Go-Go" when no song is entered, followed by two exmaples of songs entered by the user.  "Touch of Grey" and "Close to Me".
+_Below shows the app returning the default song "Wake me up before you Go-Go" when no song is entered, followed by two exmaples of songs entered by the user, "Touch of Grey" and "Close to Me"._
 
       * Artist(s)
       * The song's name
@@ -49,7 +49,7 @@ Below shows the app returning the default song "Wake me up before you Go-Go" whe
 
    ## movie-this
    
-Below shows the app returning the default movie (Mr. Nobody) when no movie is entered and then returning data when "The Natural" movie is entered.
+_Below shows the app returning the default movie (Mr. Nobody) when no movie is entered and then returning data when "The Natural" movie is entered._
 
       * Title of the movie.
       * Year the movie came out.
@@ -67,7 +67,7 @@ Below shows the app returning the default movie (Mr. Nobody) when no movie is en
 
    ## do-what-it-says
    
- Below shows input added into the Spotify search section using the (fs)npm package) to retrieve data from .txt file.
+ _Below shows input added into the Spotify search section using the (fs)npm package to retrieve data from .txt file._
  
       * Artist(s)
       * The song's name
