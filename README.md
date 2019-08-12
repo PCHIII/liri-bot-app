@@ -20,7 +20,10 @@ The following Node packages are used.
 
 Screenshots are added below to showed working function as LIRI takes in the following commands:
 
- ##  concert-this
+---
+---
+
+ ##  Concert-this:
    
 _Below shows the app returning concert data when user enters the artist "Sting"._
 
@@ -31,9 +34,9 @@ _Below shows the app returning concert data when user enters the artist "Sting".
 ![](images/concertSting.JPG)
 
 ---
-
+---
    
-  ## spotify-this-song
+  ## Spotify-this-song:
    
 _Below shows the app returning the default song "Wake me up before you Go-Go" when no song is entered, followed by two exmaples of songs entered by the user, "Touch of Grey" and "Close to Me"._
 
@@ -45,9 +48,9 @@ _Below shows the app returning the default song "Wake me up before you Go-Go" wh
   ![](images/spotifyAll.JPG)
   
   ---
-  
+  ---
 
-   ## movie-this
+   ## Movie-this:
    
 _Below shows the app returning the default movie (Mr. Nobody) when no movie is entered and then returning data when "The Natural" movie is entered._
 
@@ -63,9 +66,9 @@ _Below shows the app returning the default movie (Mr. Nobody) when no movie is e
   ![](images/MovieThis.JPG)
   
   ---
-  
+  ---
 
-   ## do-what-it-says
+   ## Do-what-it-says:
    
  _Below shows input added into the Spotify search section using the (fs)npm package to retrieve data from .txt file._
  
@@ -77,17 +80,15 @@ _Below shows the app returning the default movie (Mr. Nobody) when no movie is e
    ![](images/do-what-it-says.JPG)
    
    ---   
-
+   ---
 
 
 ### BONUS
 
-* In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
+_Below we output the data to a .txt file called `log.txt`.  Appended each command to the `log.txt` file. Did not overwrite file._
 
-* Make sure you append each command you run to the `log.txt` file. 
 
-* Do not overwrite your file each time you run a command.
-
+ ![](images/logText.JPG)
 
 
 

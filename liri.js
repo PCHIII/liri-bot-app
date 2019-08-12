@@ -30,14 +30,14 @@ switch (action) {
 };
 
 function concertThis() {
-    var artistname = process.argv.slice(3).join(" ");
+    var artistName = process.argv.slice(3).join(" ");
 
     // if no artist enter madonna by default
-    if (!artistname) {
-        artistname = 'Madonna';
+    if (!artistName) {
+        artistName = 'Madonna';
     }
 
-    var apiUrl = "https://rest.bandsintown.com/artists/" + artistname + "/events?app_id=codingbootcamp";
+    var apiUrl = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp";
 
 
     axios.get(apiUrl).then(function(response){
@@ -45,7 +45,7 @@ function concertThis() {
 
         for (var i = 0; i < response.data.length; i++) {
             console.log("")
-            console.log("Artist: " + artistname.toUpperCase());
+            console.log("Artist: " + artistName.toUpperCase());
             
             var venueName = response.data[i].venue.name;
             console.log("Venue: " + venueName);
@@ -59,33 +59,20 @@ function concertThis() {
             console.log("")
         // var jsonData = response.data;
         // console.log(jsonData)
+        
+        var result = ("Artist: " + artistName + "\n" + "Venue: " + venueName + "\n" + "Location: " + venueLocation + "\n" + "Date: " + date);
+        writeData(action, result);
+
+
         }
     })
+
+    
 
 // axios errors docs?????? using promises cut/paste from stack
 .catch((error) => {
     console.log(error);
-    // Error 
-    // if (error.response) {
-    //     /*
-    //      * The request was made and the server responded with a
-    //      * status code that falls out of the range of 2xx
-    //      */
-    //     console.log(error.response.data);
-    //     console.log(error.response.status);
-    //     console.log(error.response.headers);
-    // } else if (error.request) {
-    //     /*
-    //      * The request was made but no response was received, `error.request`
-    //      * is an instance of XMLHttpRequest in the browser and an instance
-    //      * of http.ClientRequest in Node.js
-    //      */
-    //     console.log(error.request);
-    // } else {
-    //     // Something happened in setting up the request and triggered an Error
-    //     console.log('Error', error.message);
-    // }
-    // console.log(error.config);
+   
 });
 
 }
@@ -100,17 +87,8 @@ function spotifythisSong() {
     }
 
     // search spotify
-    // spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
-    //     if (err) {
-    //       return console.log('Error occurred: ' + err);
-    //     }
-       
-    //   console.log(data); 
-    //   });
 
-    //capture user-input,
-    //npm install spotify, and use the template as suggested in the DOCS. 
-    //parse through the JSON correctly
+    //parse JSON 
 
     spotify.search({ type: 'track', query: songInput }, function (err, data) {
         if (err) {
@@ -203,27 +181,7 @@ function movieThis() {
 // grabbed from stack
     .catch((error) => {
         console.log(error);
-        // Error 
-        // if (error.response) {
-        //     /*
-        //      * The request was made and the server responded with a
-        //      * status code that falls out of the range of 2xx
-        //      */
-        //     console.log(error.response.data);
-        //     console.log(error.response.status);
-        //     console.log(error.response.headers);
-        // } else if (error.request) {
-        //     /*
-        //      * The request was made but no response was received, `error.request`
-        //      * is an instance of XMLHttpRequest in the browser and an instance
-        //      * of http.ClientRequest in Node.js
-        //      */
-        //     console.log(error.request);
-        // } else {
-        //     // Something happened in setting up the request and triggered an Error
-        //     console.log('Error', error.message);
-        // }
-        // console.log(error.config);
+        
     });
 
 }
@@ -245,4 +203,17 @@ function dowhatitSays () {
             spotifythisSong(process.argv[3]);
         }
     });
+}
+
+function writeData (action, result) {
+    var fs = require("fs");
+    var text = ("" + "\n" + "Command: " + action + "\n" + result + "\n" + "" + "\n");
+
+    fs.appendFile("log.txt", text, function(error) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log("End of Search");
+        }
+    })
 }
